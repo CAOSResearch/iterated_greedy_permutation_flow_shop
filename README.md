@@ -1,2 +1,6 @@
-# iterated_greedy_permutation_flow_shop.
+# iterated_greedy_permutation_flow_shop
 Optimización de bajo coste computacional para la programación de tareas industriales en PYMEs: un enfoque basado en Iterated Greedy para el Permutation Flow-Shop.
+
+El presente Trabajo de Fin de Grado aborda el problema clásico de secuenciación de tareas (Permutation Flow-Shop Scheduling Problem - PFSP). Tradicionalmente, resolver este problema requiere de herramientas comerciales o metaheurísticas de gran coste computacional, suponiendo una barrera para las Pequeñas y Medianas Empresas (PYMEs).
+
+El objetivo principal es diseñar, implementar y validar un algoritmo heurístico de alto rendimiento (Iterated Greedy) que funcione como una solución accesible de bajo coste computacional. Adicionalmente, al minimizar los tiempos totales de producción (makespan) y los tiempos muertos de la maquinaria, el modelo aporta un beneficio intrínseco en la eficiencia energética de la planta, alineándose con las necesidades de sostenibilidad industrial. El rendimiento del algoritmo será evaluado estadísticamente frente al estado del arte utilizando bases de datos modernas de alta complejidad (Benchmark VRF, 2015), demostrando su viabilidad como un motor de optimización pragmático para el tejido industrial a pequeña escala.
