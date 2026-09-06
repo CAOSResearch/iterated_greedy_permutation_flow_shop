@@ -1,0 +1,60 @@
+
+==============================================================================
+EXP-008 — parte 'full', presupuesto 500 (216 filas, 36 instancias con ambos operadores)
+Comparación: 'idle-rcl' frente a 'random'
+==============================================================================
+
+Detalle por instancia (medias sobre semillas):
+instancia                    m pas/it base pas/it guia   trabajo   tiempo  LS base
+taillard/tai100_10_0        10        2.02        1.91     -5.1%    -4.5%     98%
+taillard/tai100_20_0        20        2.35        2.21     -6.1%    -5.7%     98%
+taillard/tai100_5_0          5        1.37        1.38     +0.6%    +1.0%     97%
+taillard/tai200_10_0        10        1.65        1.66     +0.9%    -0.4%     99%
+taillard/tai200_20_0        20        2.19        2.13     -2.9%    -3.3%     99%
+taillard/tai20_10_0         10        1.79        1.68     -6.1%    -4.1%     89%
+taillard/tai20_20_0         20        1.91        1.54    -18.9%   -15.7%     90%
+taillard/tai20_5_0           5        1.68        1.28    -23.9%   -18.6%     88%
+taillard/tai500_20_0        20        2.26        2.20     -2.6%    +6.0%    100%
+taillard/tai50_10_0         10        2.18        1.85    -15.4%   -14.2%     96%
+taillard/tai50_20_0         20        2.25        2.07     -7.9%    -7.2%     96%
+taillard/tai50_5_0           5        1.49        1.58     +5.8%    +6.3%     94%
+vrf/VFR100_20_10_Gap        20        2.37        2.15     -9.0%    -8.6%     98%
+vrf/VFR100_40_10_Gap        40        2.13        1.95     -8.6%    -8.0%     98%
+vrf/VFR100_60_10_Gap        60        2.10        1.99     -5.2%    -4.5%     98%
+vrf/VFR200_20_10_Gap        20        2.34        2.17     -6.9%    -6.2%     99%
+vrf/VFR200_40_10_Gap        40        2.36        2.28     -3.4%    -3.3%     99%
+vrf/VFR200_60_10_Gap        60        2.29        2.25     -1.6%    +2.4%     99%
+vrf/VFR300_20_10_Gap        20        2.04        2.02     -1.2%    -1.0%     99%
+vrf/VFR300_40_10_Gap        40        2.42        2.26     -6.4%    -2.0%     99%
+vrf/VFR300_60_10_Gap        60        2.47        2.29     -7.2%    -4.6%     99%
+vrf/VFR400_20_10_Gap        20        2.12        2.11     -0.5%    -6.9%     99%
+vrf/VFR400_40_10_Gap        40        2.36        2.25     -4.5%    -9.8%    100%
+vrf/VFR400_60_10_Gap        60        2.39        2.23     -6.8%    -5.3%    100%
+vrf/VFR500_20_10_Gap        20        2.22        2.22     -0.1%    -8.5%    100%
+vrf/VFR500_40_10_Gap        40        2.34        2.26     -3.6%    -1.8%    100%
+vrf/VFR500_60_10_Gap        60        2.38        2.28     -3.9%    -5.3%    100%
+vrf/VFR600_20_10_Gap        20        2.20        2.17     -1.2%    -7.5%    100%
+vrf/VFR600_40_10_Gap        40        2.33        2.20     -5.5%    -4.0%    100%
+vrf/VFR600_60_10_Gap        60        2.34        2.16     -7.6%    -9.8%    100%
+vrf/VFR700_20_10_Gap        20        1.94        2.00     +3.4%    -5.8%    100%
+vrf/VFR700_40_10_Gap        40        2.34        2.26     -3.4%    -1.5%    100%
+vrf/VFR700_60_10_Gap        60        2.30        2.26     -2.1%    -1.3%    100%
+vrf/VFR800_20_10_Gap        20        2.12        2.16     +2.1%    +1.7%    100%
+vrf/VFR800_40_10_Gap        40        2.35        2.24     -4.7%    -3.2%    100%
+vrf/VFR800_60_10_Gap        60        2.36        2.25     -4.9%    +2.1%    100%
+
+==============================================================================
+PREDICCIONES
+==============================================================================
+P1 la búsqueda local domina el tiempo: media 97.8%, mínimo 83.2% (umbral 90%) -> NO se cumple
+P2 la destrucción guiada es MÁS costosa: 0.011s vs 0.100s (+800.6%) -> SE CUMPLE (si se cumple, el ahorro no está en la destrucción)
+P3 la guiada hace MENOS pasadas/iteración: 2.16 vs 2.05 (-4.9%; menos en 31/36 instancias) -> SE CUMPLE
+P4 el trabajo explica el tiempo: ratio trabajo medio 0.952 vs ratio tiempo medio 0.955 (diferencia 0.003, correlación r=0.771) -> SE CUMPLE
+
+==============================================================================
+CONCLUSIÓN: la dirección de la hipótesis se confirma (la guiada hace menos
+pasadas), pero alguna predicción no se cumple: el mecanismo explica solo
+parte del ahorro. Ver el detalle arriba antes de afirmarlo en la memoria.
+
+JUSTIFICACIÓN: la destrucción guiada es más rápida porque necesita un 4.9 % menos de pasadas de búsqueda local por iteración; eso supone un 4.8 % menos de trabajo, que se traduce en un 4.5 % menos de tiempo (correlación r = 0.771).
+==============================================================================

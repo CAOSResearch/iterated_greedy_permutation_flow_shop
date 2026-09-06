@@ -1,0 +1,7 @@
+-r requirements.txt
+pytest
+black
+ruff
+jupyter
+nbconvert
+matplotlib==3.11.0

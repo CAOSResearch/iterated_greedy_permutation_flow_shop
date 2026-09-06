@@ -1,0 +1,13 @@
+instance_id,benchmark,n,m,seed,budget,makespan,neh_makespan,reference,rpd,runtime_s
+taillard/tai20_5_0,taillard,20,5,42,50,1278,1286,1278,0.0000,0.079
+taillard/tai20_5_0,taillard,20,5,42,100,1278,1286,1278,0.0000,0.121
+taillard/tai20_5_0,taillard,20,5,42,200,1278,1286,1278,0.0000,0.232
+taillard/tai20_5_0,taillard,20,5,42,500,1278,1286,1278,0.0000,0.572
+taillard/tai20_5_0,taillard,20,5,42,1000,1278,1286,1278,0.0000,1.122
+taillard/tai20_5_0,taillard,20,5,42,2000,1278,1286,1278,0.0000,2.217
+taillard/tai20_5_0,taillard,20,5,42,5000,1278,1286,1278,0.0000,5.556
+taillard/tai20_5_0,taillard,20,5,123,50,1278,1286,1278,0.0000,0.055
+taillard/tai20_5_0,taillard,20,5,123,100,1278,1286,1278,0.0000,0.111
+taillard/tai20_5_0,taillard,20,5,123,200,1278,1286,1278,0.0000,0.219
+taillard/tai20_5_0,taillard,20,5,123,500,1278,1286,1278,0.0000,0.565
+taillard/tai20_5_0,taillard,20,5,123,1000,1278,1286,1278,0.0000,1.138

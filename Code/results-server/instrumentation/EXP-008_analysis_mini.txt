@@ -1,0 +1,32 @@
+
+==============================================================================
+EXP-008 — parte 'mini', presupuesto 200 (36 filas, 9 instancias con ambos operadores)
+Comparación: 'idle-rcl' frente a 'random'
+==============================================================================
+
+Detalle por instancia (medias sobre semillas):
+instancia                    m pas/it base pas/it guia   trabajo   tiempo  LS base
+vrf/VFR100_20_10_Gap        20        2.38        2.20     -7.9%    -6.6%     98%
+vrf/VFR100_40_10_Gap        40        2.26        2.09     -7.5%    -7.6%     98%
+vrf/VFR100_60_10_Gap        60        2.14        1.97     -7.8%    -7.5%     98%
+vrf/VFR200_20_10_Gap        20        2.31        2.32     +0.2%    +0.1%     99%
+vrf/VFR200_40_10_Gap        40        2.48        2.39     -3.6%    -4.1%     99%
+vrf/VFR200_60_10_Gap        60        2.46        2.33     -5.1%    -4.4%     99%
+vrf/VFR300_20_10_Gap        20        2.07        2.06     -0.2%    +0.8%     99%
+vrf/VFR300_40_10_Gap        40        2.53        2.31     -8.6%    -8.0%     99%
+vrf/VFR300_60_10_Gap        60        2.62        2.42     -7.4%    -7.9%     99%
+
+==============================================================================
+PREDICCIONES
+==============================================================================
+P1 la búsqueda local domina el tiempo: media 98.7%, mínimo 97.5% (umbral 90%) -> SE CUMPLE
+P2 la destrucción guiada es MÁS costosa: 0.004s vs 0.034s (+848.0%) -> SE CUMPLE (si se cumple, el ahorro no está en la destrucción)
+P3 la guiada hace MENOS pasadas/iteración: 2.36 vs 2.23 (-5.5%; menos en 8/9 instancias) -> SE CUMPLE
+P4 el trabajo explica el tiempo: ratio trabajo medio 0.947 vs ratio tiempo medio 0.950 (diferencia 0.003, correlación r=0.981) -> SE CUMPLE
+
+==============================================================================
+CONCLUSIÓN: la hipótesis se sostiene — el menor número de pasadas de
+búsqueda local explica el ahorro de tiempo de la destrucción guiada.
+
+JUSTIFICACIÓN: la destrucción guiada es más rápida porque necesita un 5.5 % menos de pasadas de búsqueda local por iteración; eso supone un 5.3 % menos de trabajo, que se traduce en un 5.0 % menos de tiempo (correlación r = 0.981).
+==============================================================================

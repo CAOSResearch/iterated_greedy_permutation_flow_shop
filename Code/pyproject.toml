@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pfsp"
+version = "0.1.0"
+description = "Reproducible Permutation Flow-Shop Scheduling Problem toolkit (NEH baseline)"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "BSD-3-Clause" }
+dependencies = [
+    "numpy==2.3.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "ruff",
+    "jupyter",
+    "nbconvert",
+]
+
+[project.scripts]
+pfsp-neh = "pfsp.cli:main"
+pfsp-ig = "pfsp.cli_ig:main"
+
+[tool.setuptools.packages.find]
+include = ["pfsp*"]
+exclude = ["tests*", "notebooks*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-ra"
